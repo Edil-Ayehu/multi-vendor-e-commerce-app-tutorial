@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:multi_vendor_ecommerce_application/features/wishlist/screens/wishlist_screen.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -23,7 +25,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         Stack(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () => Get.to(() => const WishlistScreen()),
               icon: Icon(
                 Icons.favorite,
                 color: isDark ? Colors.white : Colors.black87,
