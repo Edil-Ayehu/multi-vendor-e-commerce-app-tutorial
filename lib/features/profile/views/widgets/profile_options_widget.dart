@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:multi_vendor_ecommerce_application/core/config/theme/app_colors.dart';
+import 'package:multi_vendor_ecommerce_application/features/profile/controllers/profile_controller.dart';
 
 class ProfileOptionsWidget extends StatelessWidget {
-  const ProfileOptionsWidget({super.key});
+  final ProfileController controller;
+  const ProfileOptionsWidget({super.key, required this.controller,});
 
   @override
   Widget build(BuildContext context) {
