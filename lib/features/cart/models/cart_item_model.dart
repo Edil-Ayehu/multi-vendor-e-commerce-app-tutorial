@@ -17,6 +17,26 @@ class CartItem {
     required this.sellerId,
   });
 
+    CartItem copyWith({
+    String? id,
+    String? productId,
+    String? productName,
+    double? price,
+    String? image,
+    int? quantity,
+    String? sellerId,
+  }) {
+    return CartItem(
+      id: id ?? this.id,
+      productId: productId ?? this.productId,
+      productName: productName ?? this.productName,
+      price: price ?? this.price,
+      image: image ?? this.image,
+      quantity: quantity ?? this.quantity,
+      sellerId: sellerId ?? this.sellerId,
+    );
+  }
+
   Map<String, dynamic> toMap() {
     return {
       'id': id,

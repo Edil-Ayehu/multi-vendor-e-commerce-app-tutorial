@@ -4,7 +4,9 @@ import 'package:multi_vendor_ecommerce_application/core/common/utils/text_scale_
 import 'package:multi_vendor_ecommerce_application/core/config/theme/app_theme.dart';
 import 'package:multi_vendor_ecommerce_application/core/controllers/theme_controller.dart';
 import 'package:multi_vendor_ecommerce_application/core/routes/app_routes.dart';
+import 'package:multi_vendor_ecommerce_application/features/cart/controllers/cart_controller.dart';
 import 'package:multi_vendor_ecommerce_application/features/onboarding/controllers/onboarding_controller.dart';
+import 'package:multi_vendor_ecommerce_application/features/profile/controllers/profile_controller.dart';
 import 'package:multi_vendor_ecommerce_application/features/splash/controllers/splash_controller.dart';
 
 void main() async {
@@ -13,6 +15,8 @@ void main() async {
   await Get.putAsync(() async => ThemeController());
   Get.put(SplashController());
   Get.put(OnboardingController());
+  Get.put(ProfileController());
+  Get.put(CartController());
   runApp(const MyApp());
 }
 
