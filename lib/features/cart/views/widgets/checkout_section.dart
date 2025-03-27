@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:multi_vendor_ecommerce_application/core/config/theme/app_colors.dart';
 import 'package:multi_vendor_ecommerce_application/features/cart/models/cart_item_model.dart';
+import 'package:multi_vendor_ecommerce_application/features/orders/views/screens/checkout_screen.dart';
 
 class CheckoutSection extends StatelessWidget {
   final List<CartItem> items;
@@ -62,9 +64,10 @@ class CheckoutSection extends StatelessWidget {
                   ],
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    // Navigation will be implemented with backend integration
-                  },
+                  // onPressed: () {
+                  //   // Navigation will be implemented later
+                  // },
+                  onPressed: () => Get.to(() => const CheckoutScreen()),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primary,
                     minimumSize: const Size(200, 56),
@@ -73,9 +76,9 @@ class CheckoutSection extends StatelessWidget {
                     ),
                     elevation: 2,
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
+                    children: [
                       Text(
                         'Checkout',
                         style: TextStyle(
