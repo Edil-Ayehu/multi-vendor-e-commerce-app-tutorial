@@ -37,9 +37,10 @@ class ProfileOptionsWidget extends StatelessWidget {
             context,
             icon: Icons.location_on_outlined,
             title: 'Shipping Address',
-            onTap: () {
-              // Will be implemented with backend integration
-            },
+            // onTap: () {
+            //   // Will be implemented with backend integration
+            // },
+            onTap: controller.navigateToShippingAddress,
           ),
           _buildOptionTile(
             context,

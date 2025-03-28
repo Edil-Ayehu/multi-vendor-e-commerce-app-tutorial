@@ -45,7 +45,8 @@ class ProfileController {
   void navigateToShippingAddress() {
     if (isAuthenticated) {
       // Will be implemented with actual navigation
-      debugPrint('Navigate to Shipping Address');
+      // debugPrint('Navigate to Shipping Address');
+      Get.toNamed(AppRoutes.shippingAddress);
     } else {
       showAuthPrompt();
     }
