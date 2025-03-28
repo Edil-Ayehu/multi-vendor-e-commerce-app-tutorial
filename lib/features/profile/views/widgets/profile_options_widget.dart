@@ -19,9 +19,10 @@ class ProfileOptionsWidget extends StatelessWidget {
             context,
             icon: Icons.person_outline,
             title: 'Edit Profile',
-            onTap: () {
-              // Will be implemented with backend integration
-            },
+            // onTap: () {
+            //   // Will be implemented with backend integration
+            // },
+            onTap: controller.navigateToEditProfile,
           ),
           _buildOptionTile(
             context,

@@ -26,7 +26,8 @@ class ProfileController {
   void navigateToEditProfile() {
     if (isAuthenticated) {
       // Will be implemented with actual navigation
-      debugPrint('Navigate to Edit Profile');
+      // debugPrint('Navigate to Edit Profile');
+      Get.toNamed(AppRoutes.editProfile);
     } else {
       showAuthPrompt();
     }
