@@ -11,6 +11,8 @@ import 'package:multi_vendor_ecommerce_application/features/orders/controllers/o
 import 'package:multi_vendor_ecommerce_application/features/orders/repositories/order_repository.dart';
 import 'package:multi_vendor_ecommerce_application/features/profile/controllers/profile_controller.dart';
 import 'package:multi_vendor_ecommerce_application/features/splash/controllers/splash_controller.dart';
+import 'package:multi_vendor_ecommerce_application/features/wishlist/controllers/wishlist_controller.dart';
+import 'package:multi_vendor_ecommerce_application/features/wishlist/repositories/wishlist_repository.dart';
 import 'package:toastification/toastification.dart';
 
 void main() async {
@@ -34,6 +36,11 @@ void main() async {
     repository: orderRepository,
     cartController: cartController,
   ));
+
+    // Initialize wishlist dependencies
+  final wishlistRepository = WishlistRepository();
+  Get.put(wishlistRepository);
+  Get.put(WishlistController(repository: wishlistRepository));
 
   runApp(const MyApp());
 }

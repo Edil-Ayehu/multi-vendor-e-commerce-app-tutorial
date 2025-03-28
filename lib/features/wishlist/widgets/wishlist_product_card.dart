@@ -1,6 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:multi_vendor_ecommerce_application/features/products/models/product_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:multi_vendor_ecommerce_application/features/products/screens/product_details_screen.dart';
+import 'package:multi_vendor_ecommerce_application/features/wishlist/controllers/wishlist_controller.dart';
+import '../../products/models/product_model.dart';
 
 class WishlistProductCard extends StatelessWidget {
   final Product product;
@@ -13,12 +15,15 @@ class WishlistProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final wishlistController = WishlistController.to;
 
     return GestureDetector(
-      onTap: () {
-        // Will be implemented with actual navigation
-        debugPrint('Navigate to product details: ${product.id}');
-      },
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProductDetailsScreen(product: product),
+        ),
+      ),
       child: Container(
         decoration: BoxDecoration(
           color: Theme.of(context).cardColor,
@@ -44,7 +49,7 @@ class WishlistProductCard extends StatelessWidget {
                   ),
                   child: CachedNetworkImage(
                     imageUrl: product.images.first,
-                    height: 140,
+                    height: 150,
                     width: double.infinity,
                     fit: BoxFit.cover,
                     placeholder: (context, url) => Container(
@@ -104,10 +109,7 @@ class WishlistProductCard extends StatelessWidget {
                     color: Colors.white,
                     size: 20,
                   ),
-                  onPressed: () {
-                    // Will be implemented with actual wishlist toggle
-                    debugPrint('Remove from wishlist: ${product.id}');
-                  },
+                  onPressed: () => wishlistController.toggleWishlist(product),
                 ),
               ),
             ),
