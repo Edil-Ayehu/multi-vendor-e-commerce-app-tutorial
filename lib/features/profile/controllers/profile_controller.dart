@@ -73,32 +73,31 @@ class ProfileController {
     debugPrint('Show Auth Prompt');
   }
   
-  void showThemeDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
+  void showThemeDialog() {
+    Get.dialog(
+      AlertDialog(
         title: const Text('Choose Theme'),
-        backgroundColor: Theme.of(context).cardColor,
+        backgroundColor: Get.theme.cardColor,
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
               leading: const Icon(Icons.light_mode),
               title: const Text('Light'),
-              selected: Theme.of(context).brightness == Brightness.light,
-              onTap: () => _changeTheme(context, ThemeMode.light),
+              selected: Get.theme.brightness == Brightness.light,
+              onTap: () => _changeTheme(ThemeMode.light),
             ),
             ListTile(
               leading: const Icon(Icons.dark_mode),
               title: const Text('Dark'),
-              selected: Theme.of(context).brightness == Brightness.dark,
-              onTap: () => _changeTheme(context, ThemeMode.dark),
+              selected: Get.theme.brightness == Brightness.dark,
+              onTap: () => _changeTheme(ThemeMode.dark),
             ),
             ListTile(
               leading: const Icon(Icons.brightness_auto),
               title: const Text('System'),
-              selected: MediaQuery.platformBrightnessOf(context) == Theme.of(context).brightness,
-              onTap: () => _changeTheme(context, ThemeMode.system),
+              selected: Get.theme.brightness == ThemeMode.system,
+              onTap: () => _changeTheme(ThemeMode.system),
             ),
           ],
         ),
@@ -106,10 +105,9 @@ class ProfileController {
     );
   }
   
-  void _changeTheme(BuildContext context, ThemeMode mode) {
-    // Will be implemented with actual theme change
-    debugPrint('Change theme to: $mode');
-    Navigator.pop(context);
+  void _changeTheme(ThemeMode mode) {
+    Get.changeThemeMode(mode);
+    Get.back();
   }
   
   void showLogoutDialog(BuildContext context) {

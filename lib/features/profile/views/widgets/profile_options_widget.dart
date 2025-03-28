@@ -55,9 +55,10 @@ class ProfileOptionsWidget extends StatelessWidget {
             context,
             icon: Icons.brightness_6,
             title: 'Theme',
-            onTap: () {
-              // Will be implemented with backend integration
-            },
+            // onTap: () {
+            //   // Will be implemented with backend integration
+            // },
+            onTap: controller.showThemeDialog,
           ),
           _buildOptionTile(
             context,
