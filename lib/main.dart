@@ -10,6 +10,7 @@ import 'package:multi_vendor_ecommerce_application/features/onboarding/controlle
 import 'package:multi_vendor_ecommerce_application/features/orders/controllers/order_controller.dart';
 import 'package:multi_vendor_ecommerce_application/features/orders/repositories/order_repository.dart';
 import 'package:multi_vendor_ecommerce_application/features/profile/controllers/help_center_controller.dart';
+import 'package:multi_vendor_ecommerce_application/features/profile/controllers/privacy_policy_controller.dart';
 import 'package:multi_vendor_ecommerce_application/features/profile/controllers/profile_controller.dart';
 import 'package:multi_vendor_ecommerce_application/features/splash/controllers/splash_controller.dart';
 import 'package:multi_vendor_ecommerce_application/features/wishlist/controllers/wishlist_controller.dart';
@@ -24,6 +25,7 @@ void main() async {
   Get.put(OnboardingController());
   Get.put(ProfileController());
    Get.put(HelpCenterController());
+   Get.put(PrivacyPolicyController());
 
   // Initialize cart dependencies
   final cartRepository = CartRepository();

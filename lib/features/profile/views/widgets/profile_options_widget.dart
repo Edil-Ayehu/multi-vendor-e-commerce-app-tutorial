@@ -64,9 +64,10 @@ class ProfileOptionsWidget extends StatelessWidget {
             context,
             icon: Icons.privacy_tip_outlined,
             title: 'Privacy Policy',
-            onTap: () {
-              // Will be implemented with backend integration
-            },
+            // onTap: () {
+            //   // Will be implemented with backend integration
+            // },
+            onTap: controller.navigateToPrivacyPolicy,
           ),
           _buildOptionTile(
             context,

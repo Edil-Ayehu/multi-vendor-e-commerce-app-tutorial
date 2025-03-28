@@ -60,7 +60,8 @@ class ProfileController {
   
   void navigateToPrivacyPolicy() {
     // Will be implemented with actual navigation
-    debugPrint('Navigate to Privacy Policy');
+    // debugPrint('Navigate to Privacy Policy');
+    Get.toNamed(AppRoutes.privacyPolicy);
   }
   
   void navigateToTermsConditions() {
