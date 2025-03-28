@@ -83,9 +83,10 @@ class ProfileOptionsWidget extends StatelessWidget {
               context,
               icon: Icons.logout,
               title: 'Logout',
-              onTap: () {
-                // Will be implemented with backend integration
-              },
+              // onTap: () {
+              //   // Will be implemented with backend integration
+              // },
+              onTap: controller.showLogoutDialog,
               isDestructive: true,
             ),
         ],

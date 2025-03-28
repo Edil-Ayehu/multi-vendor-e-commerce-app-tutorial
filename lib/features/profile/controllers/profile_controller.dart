@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:multi_vendor_ecommerce_application/features/auth/views/screens/sign_in_screen.dart';
 
 import '../../../core/routes/app_routes.dart';
 
@@ -112,31 +113,30 @@ class ProfileController {
     Get.back();
   }
   
-  void showLogoutDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: Theme.of(context).cardColor,
+  void showLogoutDialog() {
+    Get.dialog(
+      AlertDialog(
+        backgroundColor: Get.theme.cardColor,
         title: Text(
           'Logout',
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
+          style: Get.textTheme.bodyLarge!.copyWith(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
         content: const Text('Are you sure you want to logout?'),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Get.back(),
             child: Text(
               'Cancel',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.green),
+              style: Get.textTheme.bodyLarge!.copyWith(color: Colors.green),
             ),
           ),
           FilledButton(
             onPressed: () {
-              Navigator.pop(context);
-              _logout();
+              Get.back();
+              Get.offAll(() => const SignInScreen());
             },
             style: FilledButton.styleFrom(backgroundColor: Colors.red),
             child: const Text('Logout'),
