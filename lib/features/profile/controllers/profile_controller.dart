@@ -66,7 +66,8 @@ class ProfileController {
   
   void navigateToTermsConditions() {
     // Will be implemented with actual navigation
-    debugPrint('Navigate to Terms & Conditions');
+    // debugPrint('Navigate to Terms & Conditions');
+    Get.toNamed(AppRoutes.termsConditions);
   }
   
   void showAuthPrompt() {

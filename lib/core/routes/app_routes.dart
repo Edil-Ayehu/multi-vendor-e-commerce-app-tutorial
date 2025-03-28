@@ -6,6 +6,7 @@ import 'package:multi_vendor_ecommerce_application/features/profile/views/screen
 import 'package:multi_vendor_ecommerce_application/features/profile/views/screens/help_center_screen.dart';
 import 'package:multi_vendor_ecommerce_application/features/profile/views/screens/privacy_policy_screen.dart';
 import 'package:multi_vendor_ecommerce_application/features/profile/views/screens/shipping_address_screen.dart';
+import 'package:multi_vendor_ecommerce_application/features/profile/views/screens/terms_conditions_screen.dart';
 import 'package:multi_vendor_ecommerce_application/features/splash/screens/splash_screen.dart';
 
 class AppRoutes {
@@ -19,6 +20,7 @@ class AppRoutes {
   static const String shippingAddress = '/shipping-address';
   static const String helpCenter = '/help-center';
   static const String privacyPolicy = '/privacy-policy';
+  static const String termsConditions = '/terms-conditions';
 
   static final routes = [
     GetPage(name: splash, page: ()=> const SplashScreen()),
@@ -30,5 +32,6 @@ class AppRoutes {
     GetPage(name: shippingAddress, page: () => const ShippingAddressScreen()),
     GetPage(name: helpCenter, page: () => const HelpCenterScreen()),
     GetPage(name: privacyPolicy, page: () => PrivacyPolicyScreen()),
+    GetPage(name: termsConditions, page: () => TermsConditionsScreen()),
   ];
 }

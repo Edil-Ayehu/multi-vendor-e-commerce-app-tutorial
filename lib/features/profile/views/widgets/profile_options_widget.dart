@@ -73,9 +73,10 @@ class ProfileOptionsWidget extends StatelessWidget {
             context,
             icon: Icons.description_outlined,
             title: 'Terms & Conditions',
-            onTap: () {
-              // Will be implemented with backend integration
-            },
+            // onTap: () {
+            //   // Will be implemented with backend integration
+            // },
+            onTap: controller.navigateToTermsConditions,
           ),
           if (isAuthenticated)
             _buildOptionTile(
