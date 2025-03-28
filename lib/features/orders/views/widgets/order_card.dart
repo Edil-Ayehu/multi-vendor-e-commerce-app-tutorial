@@ -23,7 +23,7 @@ class OrderCard extends StatelessWidget {
         data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
         child: ExpansionTile(
           title: Text(
-            'Order #${order.id.substring(0, 8)}',
+            'Order #${order.id}',
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           subtitle: _buildSubtitle(context, isDark, controller),
@@ -97,7 +97,7 @@ class OrderCard extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      title: Text(item['productName']),
+      title: Text(item['name']),
       subtitle: Text('Quantity: ${item['quantity']}'),
       trailing: Text(
         '\$${(item['price'] * item['quantity']).toStringAsFixed(2)}',
