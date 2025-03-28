@@ -46,9 +46,10 @@ class ProfileOptionsWidget extends StatelessWidget {
             context,
             icon: Icons.help_outline,
             title: 'Help Center',
-            onTap: () {
-              // Will be implemented with backend integration
-            },
+            // onTap: () {
+            //   // Will be implemented with backend integration
+            // },
+            onTap: controller.navigateToHelpCenter,
           ),
           _buildOptionTile(
             context,

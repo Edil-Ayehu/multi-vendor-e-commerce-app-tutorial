@@ -54,7 +54,8 @@ class ProfileController {
   
   void navigateToHelpCenter() {
     // Will be implemented with actual navigation
-    debugPrint('Navigate to Help Center');
+    // debugPrint('Navigate to Help Center');
+    Get.toNamed(AppRoutes.helpCenter);
   }
   
   void navigateToPrivacyPolicy() {
