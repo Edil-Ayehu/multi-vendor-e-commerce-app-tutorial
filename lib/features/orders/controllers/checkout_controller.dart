@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:multi_vendor_ecommerce_application/features/orders/controllers/order_controller.dart';
+import '../../../features/profile/models/shipping_address_model.dart';
 
 class CheckoutController extends GetxController {
   static CheckoutController get to => Get.find();
@@ -19,6 +21,12 @@ class CheckoutController extends GetxController {
   // Form Keys
   final addressFormKey = GlobalKey<FormState>();
   final paymentFormKey = GlobalKey<FormState>();
+
+  @override
+  void onInit() {
+    super.onInit();
+    // Remove loadSavedAddress() call since it uses Firestore
+  }
 
   @override
   void onClose() {
@@ -55,11 +63,30 @@ class CheckoutController extends GetxController {
     }
 
     isProcessing.value = true;
-    
-    // TODO: Implement payment processing logic
-    
-    await Future.delayed(const Duration(seconds: 2)); // Simulated delay
-    isProcessing.value = false;
+
+    try {
+      final shippingAddress = ShippingAddress(
+        street: addressController.text,
+        city: cityController.text,
+        state: stateController.text,
+        zipCode: zipController.text,
+      );
+
+      final paymentDetails = {
+        'cardNumber': cardNumberController.text,
+        'expiry': expiryController.text,
+        'cvv': cvvController.text,
+      };
+
+      await OrderController.to.placeOrder(
+        shippingAddress: shippingAddress,
+        paymentDetails: paymentDetails,
+      );
+    } catch (e) {
+      _showErrorSnackbar('Payment failed: $e');
+    } finally {
+      isProcessing.value = false;
+    }
   }
 
   void _showErrorSnackbar(String message) {

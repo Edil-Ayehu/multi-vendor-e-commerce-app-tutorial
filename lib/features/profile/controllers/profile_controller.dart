@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../core/routes/app_routes.dart';
 
 class ProfileController {
   // Singleton pattern for easy access
@@ -32,7 +35,7 @@ class ProfileController {
   void navigateToMyOrders() {
     if (isAuthenticated) {
       // Will be implemented with actual navigation
-      debugPrint('Navigate to My Orders');
+      Get.toNamed(AppRoutes.myOrders);
     } else {
       showAuthPrompt();
     }

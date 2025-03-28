@@ -27,9 +27,10 @@ class ProfileOptionsWidget extends StatelessWidget {
             context,
             icon: Icons.shopping_bag_outlined,
             title: 'My Orders',
-            onTap: () {
-              // Will be implemented with backend integration
-            },
+            // onTap: () {
+            //   // Will be implemented with backend integration
+            // },
+            onTap: controller.navigateToMyOrders,
           ),
           _buildOptionTile(
             context,
